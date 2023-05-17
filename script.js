@@ -5,6 +5,9 @@ function getComputerChoice(){
     return randomNumber > 66? "scissors" : randomNumber <= 33 ? "rock" : "paper";
 }
 
+function getPlayerChoice(){
+    return prompt("?");
+}
 
 function playOneRound(computerChoice, playerChoice){
     let victory;
