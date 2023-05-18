@@ -10,7 +10,12 @@ function getComputerChoice(){
 }
 
 function getPlayerChoice(){
-    playerChoice = prompt("?");
+    let playerChoiceRegEx = /^rock$|^paper$|^scissors$/i; 
+    playerChoice = null;
+    while (!playerChoiceRegEx.test(playerChoice)){
+        playerChoice = prompt("?");
+    } 
+    playerChoice = playerChoice.toLowerCase();
     return playerChoice;
 }
 
