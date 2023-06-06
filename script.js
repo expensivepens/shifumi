@@ -1,4 +1,12 @@
 "use strict"
+const buttonArray = []
+const buttonValue = ["岩", "紙", "鋏"];
+for (let i = 0; i < 3; i++){
+    buttonArray[i] = document.createElement("button");
+    buttonArray[i].textContent = buttonValue[i];
+    document.body.appendChild(buttonArray[i]);
+}
+
 let playerChoice;
 let computerChoice;
 let draw;
