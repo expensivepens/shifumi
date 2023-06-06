@@ -1,6 +1,6 @@
 "use strict"
 const buttonArray = []
-const buttonValue = ["岩", "紙", "鋏"];
+const buttonValue = ["グー", "チョキ", "パー"];
 for (let i = 0; i < 3; i++){
     buttonArray[i] = document.createElement("button");
     buttonArray[i].textContent = buttonValue[i];
