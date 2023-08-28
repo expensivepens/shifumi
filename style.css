@@ -1,6 +1,7 @@
 body{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
 }
 
 .title-container{
@@ -15,7 +16,9 @@ h1{
     align-items: center;
     position: relative;
     height: 50px;
-    width: 400px;
+    width: 800px;
+    margin-bottom: 100px;
+    font-size: 50px;
 }
 
 span{
@@ -41,3 +44,77 @@ h1:hover .japanese{
     opacity: 0;
     transform: translateY(30px);
 }
+
+.player-choice, .computer-choice{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.player-rock-container, 
+.player-paper-container,
+.player-scissors-container,
+.computer-rock-container,
+.computer-paper-container,
+.computer-scissors-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.player-img-rock, 
+.player-img-paper, 
+.computer-img-rock, 
+.computer-img-paper{
+    height: 100px;
+    opacity: 0;
+}
+
+.player-img-scissors, 
+.computer-img-scissors{
+    height: 70px;
+    opacity: 0;
+}
+
+.player-span-rock,
+.player-span-paper,
+.player-span-scissors,
+.computer-span-rock,
+.computer-span-paper,
+.computer-span-scissors{
+    transition: 0.4s;
+}
+
+.player-img-rock,
+.player-img-paper,
+.player-img-scissors,
+.computer-img-rock,
+.computer-img-paper,
+.computer-img-scissors{
+    transform: translateX(-60px);
+    transition: 0.4s;
+}
+
+.player-rock-container:hover .player-span-rock,
+.player-paper-container:hover .player-span-paper,
+.player-scissors-container:hover .player-span-scissors,
+.computer-rock-container:hover .computer-span-rock,
+.computer-paper-container:hover .computer-span-paper,
+.computer-scissors-container:hover .computer-span-scissors{
+    opacity: 0;
+    transform: translateX(80px);
+}
+
+.player-rock-container:hover .player-img-rock,
+.player-paper-container:hover .player-img-paper,
+.player-scissors-container:hover .player-img-scissors,
+.computer-rock-container:hover .computer-img-rock,
+.computer-paper-container:hover .computer-img-paper,
+.computer-scissors-container:hover .computer-img-scissors{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
