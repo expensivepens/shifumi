@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 50px;
+    width: 400px;
+}
+
+span{
+    position: absolute;
+}
+
+.japanese{
+    transition: 0.3s;
+}
+
+.english{
+    opacity: 0;
+    transition: 0.3s;
+    top: -30px;
+}
+
+h1:hover .english{
+    transform: translateY(40px);
+    opacity: 1;
+}
+
+h1:hover .japanese{
+    opacity: 0;
+    transform: translateY(30px);
+}
