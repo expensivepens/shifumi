@@ -124,9 +124,9 @@ h1:hover .japanese{
     transform: translateX(0);
 }
 
-.player-rock-container:active .player-img-rock,
-.player-paper-container:active .player-img-paper,
-.player-scissors-container:active .player-img-scissors{
+.button-clickable:active .player-img-rock,
+.button-clickable:active .player-img-paper,
+.button-clickable:active .player-img-scissors{
     transition: 0.1s;
     transform: translateY(10px);
 }
