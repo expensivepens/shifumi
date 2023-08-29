@@ -58,6 +58,11 @@ h1:hover .japanese{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.player-rock-container, 
+.player-paper-container,
+.player-scissors-container{
     cursor: pointer;
 }
 
@@ -95,22 +100,22 @@ h1:hover .japanese{
     transition: 0.4s;
 }
 
+.computer-span-rock,
+.computer-span-paper,
+.computer-span-scissors{
+    color: red;
+}
+
 .player-rock-container:hover .player-span-rock,
 .player-paper-container:hover .player-span-paper,
-.player-scissors-container:hover .player-span-scissors,
-.computer-rock-container:hover .computer-span-rock,
-.computer-paper-container:hover .computer-span-paper,
-.computer-scissors-container:hover .computer-span-scissors{
+.player-scissors-container:hover .player-span-scissors{
     opacity: 0;
     transform: translateX(80px);
 }
 
 .player-rock-container:hover .player-img-rock,
 .player-paper-container:hover .player-img-paper,
-.player-scissors-container:hover .player-img-scissors,
-.computer-rock-container:hover .computer-img-rock,
-.computer-paper-container:hover .computer-img-paper,
-.computer-scissors-container:hover .computer-img-scissors{
+.player-scissors-container:hover .player-img-scissors{
     opacity: 1;
     transform: translateX(0);
 }
