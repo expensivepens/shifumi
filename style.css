@@ -14,29 +14,31 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    /* position: relative; */
     height: 50px;
     width: 800px;
     margin-bottom: 100px;
     font-size: 50px;
 }
 
-span{
+/* span{
     position: absolute;
-}
+} */
 
 .japanese{
+    position: absolute;
     transition: 0.3s;
 }
 
 .english{
+    position: absolute;
     opacity: 0;
     transition: 0.3s;
-    top: -30px;
+    transform: translateY(-50px);
 }
 
 h1:hover .english{
-    transform: translateY(40px);
+    transform: translateY(15px);
     opacity: 1;
 }
 
@@ -94,6 +96,7 @@ h1:hover .japanese{
 .computer-img-paper,
 .computer-img-scissors{
     transform: translateX(-60px);
+    position: absolute;
     transition: 0.4s;
 }
 
@@ -117,4 +120,8 @@ h1:hover .japanese{
     transform: translateX(0);
 }
 
-
+.score{
+    width: 50%;
+    display: flex;
+    justify-content: center;   
+}
