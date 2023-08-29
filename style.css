@@ -14,16 +14,11 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* position: relative; */
     height: 50px;
     width: 800px;
     margin-bottom: 100px;
     font-size: 50px;
 }
-
-/* span{
-    position: absolute;
-} */
 
 .japanese{
     position: absolute;
@@ -121,7 +116,12 @@ h1:hover .japanese{
 }
 
 .score{
-    width: 50%;
     display: flex;
     justify-content: center;   
+    align-items: center;
+    gap: 30px;
+}
+
+.score-separation{
+    transform: translateY(-4px);
 }
