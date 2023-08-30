@@ -124,6 +124,10 @@ h1:hover .japanese{
     transform: translateX(0);
 }
 
+.button-clickable{
+    cursor: pointer;
+}
+
 .button-clickable:active .player-img-rock,
 .button-clickable:active .player-img-paper,
 .button-clickable:active .player-img-scissors{
