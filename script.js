@@ -1,7 +1,28 @@
 "use strict"
+
+//DOM VARIABLES
+let playerButtons = document.querySelectorAll(".player-button"); 
+
 let playerChoice;
 let computerChoice;
 let draw;
+let buttonClickable = true;
+
+playerButtons.forEach((button)=>{
+    button.addEventListener(("click"), ()=>{
+        if (buttonClickable){
+            buttonClickable = false;
+            playerButtons.forEach((buttonz)=>{
+                buttonz.classList.remove("button-clickable");
+                setTimeout(()=>{
+                    buttonClickable = true;
+                    buttonz.classList.add("button-clickable");
+                    console.log("it's been a second")
+                }, 1500)
+            })
+        }
+    })
+})
 
 function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 100);
