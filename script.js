@@ -17,9 +17,14 @@ playerButtons.forEach((button)=>{
                 setTimeout(()=>{
                     buttonClickable = true;
                     buttonz.classList.add("button-clickable");
-                    console.log("it's been a second")
-                }, 1500)
+                }, 2000)
             })
+            setTimeout(()=>{
+                animateComputerChoice(getComputerChoice());
+                //update score
+                //display message
+
+            }, 700)
         }
     })
 })
@@ -28,6 +33,32 @@ function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 100);
     computerChoice = randomNumber > 66? "scissors" : randomNumber <= 33 ? "rock" : "paper";
     return computerChoice;
+}
+
+//MUST BE A MORE EFFICIENT WAY TO DO THIS
+function animateComputerChoice(result){
+    if (result === "rock"){
+        document.querySelector(".computer-img-rock").classList.add("computer-img-rock-animate");
+        document.querySelector(".computer-span-rock").classList.add("computer-span-rock-animate");
+        setTimeout(()=>{
+            document.querySelector(".computer-img-rock").classList.remove("computer-img-rock-animate");
+            document.querySelector(".computer-span-rock").classList.remove("computer-span-rock-animate");
+        }, 1300)
+    } else if (result === "paper"){
+        document.querySelector(".computer-img-paper").classList.add("computer-img-paper-animate");
+        document.querySelector(".computer-span-paper").classList.add("computer-span-paper-animate");
+        setTimeout(()=>{
+            document.querySelector(".computer-img-paper").classList.remove("computer-img-paper-animate");
+            document.querySelector(".computer-span-paper").classList.remove("computer-span-paper-animate");
+        }, 1300)
+    } else {
+        document.querySelector(".computer-img-scissors").classList.add("computer-img-scissors-animate");
+        document.querySelector(".computer-span-scissors").classList.add("computer-span-scissors-animate");
+        setTimeout(()=>{
+            document.querySelector(".computer-img-scissors").classList.remove("computer-img-scissors-animate");
+            document.querySelector(".computer-span-scissors").classList.remove("computer-span-scissors-animate");
+        }, 1300)
+    }
 }
 
 function getPlayerChoice(){
