@@ -140,6 +140,10 @@ h1:hover .japanese{
     transform: translateY(-4px);
 }
 
+.computer-score{
+    color: red;
+}
+
 .computer-span-rock-animate,
 .computer-span-paper-animate,
 .computer-span-scissors-animate{
