@@ -64,12 +64,6 @@ h1:hover .japanese{
     justify-content: center;
 }
 
-.player-rock-container, 
-.player-paper-container,
-.player-scissors-container{
-    cursor: pointer;
-}
-
 .player-img-rock, 
 .player-img-paper, 
 .computer-img-rock, 
