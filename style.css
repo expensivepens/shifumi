@@ -165,5 +165,9 @@ h1:hover .japanese{
     color: red;
 }
 
+.game-count, .round-result, .game-result{
+    font-size: 18px;
+}
+
 
 
