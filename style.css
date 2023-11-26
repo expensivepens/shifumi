@@ -170,5 +170,8 @@ h1:hover .japanese{
     font-size: 20px;
 }
 
+.game-finished{
+    color: red;
+}
 
 
