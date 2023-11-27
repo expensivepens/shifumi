@@ -2,29 +2,82 @@
 
 //DOM VARIABLES
 let playerButtons = document.querySelectorAll(".player-button"); 
+let playerButtonRock = document.querySelector(".player-rock-container");
+let playerButtonPaper = document.querySelector(".player-paper-container");
+let playerButtonScissors = document.querySelector(".player-scissors-container");
+let spanPlayerScore = document.querySelector("player-score");
+let spanComputerScore = document.querySelector("computer-score");
+let elPlayerScore = document.querySelector(".player-score");
+let elComputerScore = document.querySelector(".computer-score");
+let elGameCount = document.querySelector(".game-count");
+let elRoundResult = document.querySelector(".round-result");
+let elGameResult = document.querySelector(".game-result");
 
 let playerChoice;
 let computerChoice;
-let draw;
+let draw = false;
 let buttonClickable = true;
+let gameCount = 0;
+let playerScore = 0;
+let computerScore = 0;
+
+
+
+// playerButtonRock.addEventListener("click", ()=> if playerChoice = "rock");
+// playerButtonPaper.addEventListener("click", ()=> playerChoice = "paper");
+// playerButtonScissors.addEventListener("click", ()=> playerChoice = "scissors");
+
+playerButtonRock.addEventListener(("click"), ()=>{
+    if (buttonClickable){
+        playerChoice = "rock";
+        console.log(playerChoice);
+    }
+})
+
+playerButtonPaper.addEventListener(("click"), ()=>{
+    if (buttonClickable){
+        playerChoice = "paper";
+        console.log(playerChoice);
+    }
+})
+
+playerButtonScissors.addEventListener(("click"), ()=>{
+    if (buttonClickable){
+        playerChoice = "scissors";
+        console.log(playerChoice);
+    }
+})
 
 playerButtons.forEach((button)=>{
-    button.addEventListener(("click"), ()=>{
-        if (buttonClickable){
-            buttonClickable = false;
-            playerButtons.forEach((buttonz)=>{
-                buttonz.classList.remove("button-clickable");
+    button.addEventListener(("click"), (playerButt)=>{
+        if (gameCount < 4){
+            if (buttonClickable){
+                buttonClickable = false;
+                playerButtons.forEach((buttonz)=>{
+                    buttonz.classList.remove("button-clickable");
+                    setTimeout(()=>{
+                        buttonClickable = true;
+                        buttonz.classList.add("button-clickable");
+                    }, 2000)
+                })
                 setTimeout(()=>{
-                    buttonClickable = true;
-                    buttonz.classList.add("button-clickable");
-                }, 2000)
-            })
-            setTimeout(()=>{
-                animateComputerChoice(getComputerChoice());
-                //update score
-                //display message
-
-            }, 700)
+                    animateComputerChoice(getComputerChoice());
+                    game();
+                }, 700)
+            }
+        }
+        else {
+            if (buttonClickable){
+                buttonClickable = false;
+                playerButtons.forEach((buttonz)=>{
+                    buttonz.classList.remove("button-clickable");
+                })
+                setTimeout(()=>{
+                    animateComputerChoice(getComputerChoice());
+                    game();
+                    elGameCount.classList.add("game-finished")
+                }, 700)
+            }
         }
     })
 })
@@ -35,7 +88,7 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-//MUST BE A MORE EFFICIENT WAY TO DO THIS
+//MUST BE A MORE EFFICIENT WAY TO DO THIS (putting the elements in variables for a start)
 function animateComputerChoice(result){
     if (result === "rock"){
         document.querySelector(".computer-img-rock").classList.add("computer-img-rock-animate");
@@ -61,56 +114,58 @@ function animateComputerChoice(result){
     }
 }
 
-function getPlayerChoice(){
-    let playerChoiceRegEx = /^rock$|^paper$|^scissors$/i; 
-    playerChoice = null;
-    while (!playerChoiceRegEx.test(playerChoice)){
-        playerChoice = prompt("?");
-    } 
-    playerChoice = playerChoice.toLowerCase();
-    return playerChoice;
-}
-
 function playOneRound(computerChoice, playerChoice){
-    if (computerChoice == playerChoice){
+    console.log(computerChoice + " , " + playerChoice);
+    if (computerChoice === playerChoice){
+        console.log("choice 1")
         draw = true;
         return true;
     } else if (playerChoice == "rock" && computerChoice == "scissors") {
+        console.log("choice 2");
         draw = false;
         return true;
     } else if (playerChoice == "paper" && computerChoice == "rock"){
+        console.log("choice 3");
         draw = false;
         return true;
     } else if (playerChoice == "scissors" && computerChoice == "paper"){
+        console.log("choice 4");
         draw = false;
         return true;
     } else {
         draw = false;
+        console.log("lost");
         return false;
     }
 };
 
 function game(){
-    let playerScore = 0;
-    let computerScore = 0;
-    for(let a = 0; a < 5; a++){
-        if (playOneRound(getComputerChoice(), getPlayerChoice())){
+    gameCount++;
+    if (gameCount <= 5){
+        if (playOneRound(computerChoice, playerChoice)){
             if (draw){
-                console.log("Draw")
+                elRoundResult.textContent = "Draw";
             } else {
-                console.log("You win! " + `${playerChoice} beats ${computerChoice}!`)
                 playerScore ++;
+                elPlayerScore.textContent = playerScore;
+                elRoundResult.textContent = playerChoice + " beats " + computerChoice;
             }
         } else {
-            console.log("You lose! " + `${computerChoice} beats ${playerChoice}!`)
             computerScore ++;
+            elComputerScore.textContent = computerScore;
+            elRoundResult.textContent = computerChoice + " beats " + playerChoice;
         }
-    }
-    if (playerScore == computerScore){
-        console.log("It's a draw!");
-    } else if (playerScore > computerScore){
-        console.log("Player wins!");
-    } else {
-        console.log("Computer wins!");
+        elGameCount.textContent = "game " + gameCount + " / 5";
+    } 
+    if (gameCount == 5) {
+        elGameCount.textContent = "game 5 / 5";
+        if (playerScore == computerScore){
+            elGameResult.textContent = "It's a draw!";
+        } else if (playerScore > computerScore){
+            elGameResult.textContent = "Player wins!";
+        } else {
+            elGameResult.textContent = "Computer wins!";
+            elGameResult.classList.add("game-finished")
+        }
     }
 }
