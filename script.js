@@ -28,24 +28,15 @@ let computerScore = 0;
 // playerButtonScissors.addEventListener("click", ()=> playerChoice = "scissors");
 
 playerButtonRock.addEventListener(("click"), ()=>{
-    if (buttonClickable){
-        playerChoice = "rock";
-        console.log(playerChoice);
-    }
+    if (buttonClickable) playerChoice = "rock";
 })
 
 playerButtonPaper.addEventListener(("click"), ()=>{
-    if (buttonClickable){
-        playerChoice = "paper";
-        console.log(playerChoice);
-    }
+    if (buttonClickable) playerChoice = "paper";
 })
 
 playerButtonScissors.addEventListener(("click"), ()=>{
-    if (buttonClickable){
-        playerChoice = "scissors";
-        console.log(playerChoice);
-    }
+    if (buttonClickable) playerChoice = "scissors";
 })
 
 playerButtons.forEach((button)=>{
@@ -144,7 +135,7 @@ function game(){
     if (gameCount <= 5){
         if (playOneRound(computerChoice, playerChoice)){
             if (draw){
-                elRoundResult.textContent = "Draw";
+                elRoundResult.textContent = "draw";
             } else {
                 playerScore ++;
                 elPlayerScore.textContent = playerScore;
@@ -162,9 +153,9 @@ function game(){
         if (playerScore == computerScore){
             elGameResult.textContent = "It's a draw!";
         } else if (playerScore > computerScore){
-            elGameResult.textContent = "Player wins!";
+            elGameResult.textContent = "player wins";
         } else {
-            elGameResult.textContent = "Computer wins!";
+            elGameResult.textContent = "computer wins";
             elGameResult.classList.add("game-finished")
         }
     }
