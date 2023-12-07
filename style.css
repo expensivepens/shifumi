@@ -2,6 +2,7 @@ body{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
+    padding-top: 80px;
 }
 
 span{
@@ -20,7 +21,7 @@ h1{
     align-items: center;
     height: 50px;
     width: 800px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     font-size: 50px;
 }
 
@@ -50,7 +51,7 @@ h1:hover .japanese{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .player-rock-container, 
@@ -147,7 +148,10 @@ h1:hover .japanese{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
+    margin-top: 125px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
 }
 
 .score{
@@ -155,7 +159,7 @@ h1:hover .japanese{
     justify-content: center;   
     align-items: center;
     gap: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .score-separation{
@@ -167,7 +171,7 @@ h1:hover .japanese{
 }
 
 .game-count, .round-result, .game-result{
-    font-size: 20px;
+    font-size: 23px;
 }
 
 .game-finished{
