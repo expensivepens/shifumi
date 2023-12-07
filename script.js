@@ -1,12 +1,9 @@
 "use strict"
 
-//DOM VARIABLES
 let playerButtons = document.querySelectorAll(".player-button"); 
 let playerButtonRock = document.querySelector(".player-rock-container");
 let playerButtonPaper = document.querySelector(".player-paper-container");
 let playerButtonScissors = document.querySelector(".player-scissors-container");
-let spanPlayerScore = document.querySelector("player-score");
-let spanComputerScore = document.querySelector("computer-score");
 let elPlayerScore = document.querySelector(".player-score");
 let elComputerScore = document.querySelector(".computer-score");
 let elGameCount = document.querySelector(".game-count");
@@ -21,12 +18,6 @@ let gameCount = 0;
 let playerScore = 0;
 let computerScore = 0;
 
-
-
-// playerButtonRock.addEventListener("click", ()=> if playerChoice = "rock");
-// playerButtonPaper.addEventListener("click", ()=> playerChoice = "paper");
-// playerButtonScissors.addEventListener("click", ()=> playerChoice = "scissors");
-
 playerButtonRock.addEventListener(("click"), ()=>{
     if (buttonClickable) playerChoice = "rock";
 })
@@ -40,7 +31,7 @@ playerButtonScissors.addEventListener(("click"), ()=>{
 })
 
 playerButtons.forEach((button)=>{
-    button.addEventListener(("click"), (playerButt)=>{
+    button.addEventListener(("click"), ()=>{
         if (gameCount < 4){
             if (buttonClickable){
                 buttonClickable = false;
