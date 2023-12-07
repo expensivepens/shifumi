@@ -79,7 +79,6 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-//MUST BE A MORE EFFICIENT WAY TO DO THIS (putting the elements in variables for a start)
 function animateComputerChoice(result){
     if (result === "rock"){
         document.querySelector(".computer-img-rock").classList.add("computer-img-rock-animate");
